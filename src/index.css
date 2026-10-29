@@ -1,0 +1,27 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  color: #080b11;
+  background: #a8c6ff;
+}
+
+:focus-visible {
+  outline: 2px solid #8eaeeb;
+  outline-offset: 4px;
+}
