@@ -6,11 +6,11 @@ function App() {
 
   return (
     <main className={`app ${theme}`}>
-           {/* HERO */}
+      {/* HERO */}
       <section className="hero hero-intro" id="home">
         <nav className="navbar">
           <h2>
-            Portofolio<span>.</span>
+            Portofolio<span></span>
           </h2>
 
           <div className="nav-links">
@@ -37,35 +37,30 @@ function App() {
 
         <div className="hero-layout hero-intro-layout">
           <div className="hero-content hero-intro-content">
-            <p className="eyebrow intro-eyebrow">
-              <span className="status-dot"></span>
-              HALO, SELAMAT DATANG DI PORTOFOLIO SAYA
-            </p>
+            <div className="intro-text-card">
+              <h1 className="intro-title">
+                Welcome To
+                <br />
+                <span className="animated-word intro-letters">
+                  {Array.from("Profile Alip").map((letter, index) => (
+                    <span
+                      className="intro-letter"
+                      key={`${letter}-${index}`}
+                      style={{
+                        animationDelay: `${0.7 + index * 0.075}s`,
+                      }}
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </span>
+                  ))}
+                </span>
+              </h1>
 
-            <h1 className="intro-title">
-              Mengubah Ide,
-              <br />
-              <span className="animated-word intro-letters">
-                {Array.from("Menjadi Solusi.").map((letter, index) => (
-                  <span
-                    className="intro-letter"
-                    key={`${letter}-${index}`}
-                    style={{
-                      animationDelay: `${0.7 + index * 0.075}s`,
-                    }}
-                  >
-                    {letter === " " ? "\u00A0" : letter}
-                  </span>
-                ))}
-              </span>
-            </h1>
-
-            <p className="hero-description intro-description">
-              Saya Zulfikar Alip, lulusan Teknik Informatika
-              yang tertarik pada pengembangan web, pengolahan
-              data, dan teknologi untuk menciptakan solusi
-              yang fungsional dan bermanfaat.
-            </p>
+              <p className="intro-description">
+                Focused on developing digital solutions, data processing,
+                and information management.
+              </p>
+            </div>
 
             <div className="hero-actions intro-actions">
               <a className="hero-button" href="#projects">
@@ -84,7 +79,11 @@ function App() {
           </div>
         </div>
 
-        <a className="hero-scroll" href="#profile" aria-label="Gulir ke profil">
+        <a
+          className="hero-scroll"
+          href="#profile"
+          aria-label="Gulir ke profil"
+        >
           <span>GULIR UNTUK MENJELAJAH</span>
           <span className="scroll-arrow">↓</span>
         </a>
@@ -98,21 +97,19 @@ function App() {
           <h2>
             Hello, I'm
             <br />
-            <span>Zulfikar Alip.</span>
+            <span>Zulfikar Alip Takasihaeng</span>
           </h2>
 
           <p className="profile-intro">
-            Informatics Engineering Graduate yang
-            tertarik pada pengembangan web,
-            machine learning, dan pengolahan data.
+            Informatics Engineering Graduate yang tertarik pada
+            pengembangan web, machine learning, dan pengolahan data.
           </p>
 
           <p>
-            Saya senang mengeksplorasi teknologi,
-            mempelajari hal baru, dan mengembangkan
-            solusi digital yang fungsional. Saya juga
-            memiliki ketertarikan pada administrasi
-            serta pengelolaan informasi yang terstruktur.
+            Saya senang mengeksplorasi teknologi, mempelajari hal baru,
+            dan mengembangkan solusi digital yang fungsional. Saya juga
+            memiliki ketertarikan pada administrasi serta pengelolaan
+            informasi yang terstruktur.
           </p>
 
           <div className="profile-info">
@@ -153,9 +150,8 @@ function App() {
           </h2>
 
           <p>
-            Kombinasi kemampuan teknis dan keterampilan
-            kerja untuk membangun solusi yang efektif
-            dan terorganisir.
+            Kombinasi kemampuan teknis dan keterampilan kerja untuk
+            membangun solusi yang efektif dan terorganisir.
           </p>
         </div>
 
@@ -164,10 +160,12 @@ function App() {
             <span className="skill-number">01</span>
             <div className="skill-icon">⌘</div>
             <h3>Web Development</h3>
+
             <p>
-              Membangun antarmuka website yang modern,
-              responsif, dan mudah digunakan.
+              Membangun antarmuka website yang modern, responsif,
+              dan mudah digunakan.
             </p>
+
             <div className="skill-tags">
               <span>React</span>
               <span>TypeScript</span>
@@ -179,11 +177,12 @@ function App() {
             <span className="skill-number">02</span>
             <div className="skill-icon">⌁</div>
             <h3>Programming & AI</h3>
+
             <p>
-              Mengembangkan logika aplikasi dan
-              menerapkan machine learning untuk
-              klasifikasi data.
+              Mengembangkan logika aplikasi dan menerapkan machine
+              learning untuk klasifikasi data.
             </p>
+
             <div className="skill-tags">
               <span>Python</span>
               <span>Naive Bayes</span>
@@ -195,10 +194,12 @@ function App() {
             <span className="skill-number">03</span>
             <div className="skill-icon">▤</div>
             <h3>Data Management</h3>
+
             <p>
-              Mengelola data secara terstruktur untuk
-              membantu proses pencatatan dan pelaporan.
+              Mengelola data secara terstruktur untuk membantu proses
+              pencatatan dan pelaporan.
             </p>
+
             <div className="skill-tags">
               <span>Microsoft Excel</span>
               <span>Data Processing</span>
@@ -209,11 +210,12 @@ function App() {
             <span className="skill-number">04</span>
             <div className="skill-icon">◎</div>
             <h3>Administration</h3>
+
             <p>
-              Mendukung pekerjaan administrasi,
-              dokumentasi, pengarsipan, dan pengelolaan
-              berkas.
+              Mendukung pekerjaan administrasi, dokumentasi,
+              pengarsipan, dan pengelolaan berkas.
             </p>
+
             <div className="skill-tags">
               <span>Documentation</span>
               <span>Filing</span>
@@ -225,11 +227,12 @@ function App() {
             <span className="skill-number">05</span>
             <div className="skill-icon">↗</div>
             <h3>Communication</h3>
+
             <p>
-              Berkoordinasi dalam tim, menyampaikan
-              informasi, dan mendukung pelaksanaan
-              kegiatan.
+              Berkoordinasi dalam tim, menyampaikan informasi,
+              dan mendukung pelaksanaan kegiatan.
             </p>
+
             <div className="skill-tags">
               <span>Teamwork</span>
               <span>Communication</span>
@@ -240,11 +243,12 @@ function App() {
             <span className="skill-number">06</span>
             <div className="skill-icon">✳</div>
             <h3>Continuous Learning</h3>
+
             <p>
-              Terbuka terhadap teknologi baru, evaluasi,
-              dan pengembangan kemampuan secara
-              berkelanjutan.
+              Terbuka terhadap teknologi baru, evaluasi, dan
+              pengembangan kemampuan secara berkelanjutan.
             </p>
+
             <div className="skill-tags">
               <span>Problem Solving</span>
               <span>Adaptability</span>
@@ -260,14 +264,12 @@ function App() {
         <h2>Terus Belajar, Terus Bertumbuh.</h2>
 
         <p>
-          Saya percaya bahwa teknologi bukan hanya
-          tentang menulis kode, tetapi juga tentang
-          memahami masalah, mengelola informasi,
+          Saya percaya bahwa teknologi bukan hanya tentang menulis kode,
+          tetapi juga tentang memahami masalah, mengelola informasi,
           dan menciptakan solusi yang bermanfaat.
         </p>
       </section>
 
-   
       {/* PROJECTS */}
       <section className="projects" id="projects">
         <p className="eyebrow">04 / SELECTED WORK</p>
@@ -276,10 +278,10 @@ function App() {
           <h2>
             Proyek Pilihan<span>.</span>
           </h2>
+
           <p>
-            Dua proyek yang merepresentasikan pengalaman
-            saya dalam pengembangan web dan penerapan
-            machine learning.
+            Dua proyek yang merepresentasikan pengalaman saya dalam
+            pengembangan web dan penerapan machine learning.
           </p>
         </div>
 
@@ -296,9 +298,9 @@ function App() {
                 <div className="ml-content">
                   <small>CONTENT CLASSIFICATION</small>
                   <h4>Analyze a website.</h4>
+
                   <p>
-                    Sistem klasifikasi konten situs
-                    berbasis Naive Bayes.
+                    Sistem klasifikasi konten situs berbasis Naive Bayes.
                   </p>
 
                   <div className="ml-input">
@@ -311,6 +313,7 @@ function App() {
                       <small>MODEL ACCURACY</small>
                       <strong>93,63%</strong>
                     </div>
+
                     <span>NAIVE BAYES</span>
                   </div>
                 </div>
@@ -329,10 +332,9 @@ function App() {
               <h3>Klasifikasi Tautan Berbahaya</h3>
 
               <p>
-                Implementasi metode Multinomial Naive Bayes
-                pada layanan URL shortener berbasis website
-                untuk mengklasifikasikan konten situs ke
-                kategori aman, judi online, dan pornografi.
+                Implementasi metode Multinomial Naive Bayes pada layanan
+                URL shortener berbasis website untuk mengklasifikasikan
+                konten situs ke kategori aman, judi online, dan pornografi.
               </p>
 
               <div className="project-result">
@@ -370,9 +372,8 @@ function App() {
               <h3>Sistem Manajemen Proyek</h3>
 
               <p>
-                Aplikasi berbasis CodeIgniter 3 yang
-                dikembangkan untuk membantu pengelolaan
-                dan pengarsipan dokumen proyek di
+                Aplikasi berbasis CodeIgniter 3 yang dikembangkan untuk
+                membantu pengelolaan dan pengarsipan dokumen proyek di
                 BWS Sulawesi III Palu.
               </p>
 
@@ -387,7 +388,6 @@ function App() {
         </div>
       </section>
 
-      
       {/* CERTIFICATES */}
       <section className="certificates" id="certificates">
         <div className="certificates-heading">
@@ -395,10 +395,13 @@ function App() {
 
           <div className="certificates-title-row">
             <div>
-              <h2>Certificates<span>.</span></h2>
+              <h2>
+                Certificates<span>.</span>
+              </h2>
+
               <p>
-                Sertifikasi dan pencapaian yang menjadi bagian dari perjalanan
-                belajar dan pengembangan kompetensi saya.
+                Sertifikasi dan pencapaian yang menjadi bagian dari
+                perjalanan belajar dan pengembangan kompetensi saya.
               </p>
             </div>
 
@@ -431,7 +434,10 @@ function App() {
               image: "/images/serti pmm.png",
             },
           ].map((certificate, index) => (
-            <article className="certificate-card" key={certificate.name}>
+            <article
+              className="certificate-card"
+              key={certificate.name}
+            >
               <a
                 className="certificate-image-link"
                 href={certificate.image}
@@ -445,6 +451,7 @@ function App() {
                   alt={`Sertifikat ${certificate.name}`}
                   loading="lazy"
                 />
+
                 <span className="certificate-view">
                   <span>Lihat Sertifikat</span>
                   <span>↗</span>
@@ -455,6 +462,7 @@ function App() {
                 <span className="certificate-number">
                   {String(index + 1).padStart(2, "0")} / CERTIFICATE
                 </span>
+
                 <h3>{certificate.name}</h3>
                 <p>{certificate.issuer}</p>
               </div>
@@ -463,16 +471,18 @@ function App() {
         </div>
       </section>
 
-
-
       {/* EXPERIENCE & ACTIVITIES */}
       <section className="experience" id="experience">
         <div className="experience-heading">
           <p className="eyebrow">05 / EXPERIENCE & ACTIVITIES</p>
-          <h2>Beyond the <span>Classroom.</span></h2>
+
+          <h2>
+            Beyond the <span>Classroom.</span>
+          </h2>
+
           <p>
-            Pengalaman, kolaborasi, dan kontribusi sosial
-            yang membentuk perjalanan saya.
+            Pengalaman, kolaborasi, dan kontribusi sosial yang
+            membentuk perjalanan saya.
           </p>
         </div>
 
@@ -488,10 +498,10 @@ function App() {
             </p>
 
             <p className="experience-description">
-              Menjadi bagian dari program Pertukaran Mahasiswa
-              Merdeka Angkatan 3, memperluas wawasan melalui
-              interaksi lintas budaya, kolaborasi, dan pengalaman
-              belajar di lingkungan baru.
+              Menjadi bagian dari program Pertukaran Mahasiswa Merdeka
+              Angkatan 3, memperluas wawasan melalui interaksi lintas
+              budaya, kolaborasi, dan pengalaman belajar di lingkungan
+              baru.
             </p>
 
             <div className="experience-divider"></div>
@@ -500,9 +510,9 @@ function App() {
             <h4>Ketua Kontribusi Sosial</h4>
 
             <p className="experience-description">
-              Memimpin kegiatan penanaman pohon di Desa Pasir
-              Biru, Rancakalong, Sumedang sebagai bentuk
-              kontribusi sosial bersama peserta kegiatan.
+              Memimpin kegiatan penanaman pohon di Desa Pasir Biru,
+              Rancakalong, Sumedang sebagai bentuk kontribusi sosial
+              bersama peserta kegiatan.
             </p>
 
             <div className="project-tags">
@@ -512,46 +522,45 @@ function App() {
             </div>
           </div>
 
-  
-<div className="experience-gallery">
-  <figure className="activity-photo activity-photo-main">
-    <img
-      src="/pmm.png"
-      alt="Dokumentasi kegiatan Pertukaran Mahasiswa Merdeka"
-    />
-    <figcaption>
-      <span>01 / STUDENT EXCHANGE</span>
-      <strong>Explore New Perspectives.</strong>
-    </figcaption>
-  </figure>
+          <div className="experience-gallery">
+            <figure className="activity-photo activity-photo-main">
+              <img
+                src="/pmm.png"
+                alt="Dokumentasi kegiatan Pertukaran Mahasiswa Merdeka"
+              />
 
-  <figure className="activity-photo activity-photo-leader">
-    <img
-      src="/kontribusi.jpeg"
-      alt="Zulfikar sebagai Ketua Kontribusi Sosial"
-    />
-    <figcaption>
-      <span>02 / LEADERSHIP</span>
-      <strong>Leading with Purpose.</strong>
-    </figcaption>
-  </figure>
+              <figcaption>
+                <span>01 / STUDENT EXCHANGE</span>
+                <strong>Explore New Perspectives.</strong>
+              </figcaption>
+            </figure>
 
-  <figure className="activity-photo activity-photo-group">
-  <img
-    src="/kontribusi 1.jpeg"
-    alt="Foto bersama peserta kegiatan kontribusi sosial"
-  />
+            <figure className="activity-photo activity-photo-leader">
+              <img
+                src="/kontribusi.jpeg"
+                alt="Zulfikar sebagai Ketua Kontribusi Sosial"
+              />
 
-    <figcaption>
-      <span>03 / SOCIAL CONTRIBUTION</span>
-      <strong>Growing Together.</strong>
-    </figcaption>
-  </figure>
-</div>
+              <figcaption>
+                <span>02 / LEADERSHIP</span>
+                <strong>Leading with Purpose.</strong>
+              </figcaption>
+            </figure>
 
+            <figure className="activity-photo activity-photo-group">
+              <img
+                src="/kontribusi 1.jpeg"
+                alt="Foto bersama peserta kegiatan kontribusi sosial"
+              />
+
+              <figcaption>
+                <span>03 / SOCIAL CONTRIBUTION</span>
+                <strong>Growing Together.</strong>
+              </figcaption>
+            </figure>
+          </div>
         </article>
       </section>
-
 
       {/* CONTACT */}
       <footer className="contact" id="contact">
@@ -560,12 +569,11 @@ function App() {
         <h2>
           Let’s create something
           <br />
-          <span>Somethin Great</span>
+          <span>Something Great</span>
         </h2>
 
         <p>
-          Terbuka untuk kesempatan kerja, kolaborasi,
-          dan pengalaman baru.
+          Terbuka untuk kesempatan kerja, kolaborasi, dan pengalaman baru.
         </p>
 
         <div className="contact-buttons">
@@ -586,14 +594,57 @@ function App() {
           </a>
         </div>
 
-        <p className="contact-email">
-          alipzulfikar05@gmail.com
-        </p>
-
         <p className="copyright">
           © 2026 Zulfikar — Personal Portfolio
         </p>
       </footer>
+
+      {/* BOTTOM NAVIGATION — IKON UNTUK HP */}
+      <nav className="bottom-nav" aria-label="Navigasi utama">
+        <a href="#profile" className="bottom-nav-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.5" />
+            <path d="M5 20v-2a7 7 0 0 1 14 0v2z" />
+          </svg>
+          <span>Profil</span>
+        </a>
+
+        <a href="#skills" className="bottom-nav-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="6" height="6" rx="1.5" />
+            <rect x="14" y="4" width="6" height="6" rx="1.5" />
+            <rect x="4" y="14" width="6" height="6" rx="1.5" />
+            <rect x="14" y="14" width="6" height="6" rx="1.5" />
+          </svg>
+          <span>Keahlian</span>
+        </a>
+
+        <a href="#projects" className="bottom-nav-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="M3 9h18M8 5v4M16 5v4" />
+            <path d="m9 14 2 2 4-4" />
+          </svg>
+          <span>Proyek</span>
+        </a>
+
+        <a href="#certificates" className="bottom-nav-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="5" />
+            <path d="m8.5 12-1 8 4.5-2.5 4.5 2.5-1-8" />
+            <path d="m10 8 1.3 1.3L14 6.5" />
+          </svg>
+          <span>Sertifikat</span>
+        </a>
+
+        <a href="#contact" className="bottom-nav-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+          </svg>
+          <span>Kontak</span>
+        </a>
+      </nav>
     </main>
   );
 }
