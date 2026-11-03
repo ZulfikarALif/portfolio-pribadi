@@ -1548,3 +1548,113 @@ p {
   font-size: 15px;
   line-height: 1.8;
 }
+
+
+/* ===== SMOOTH SECTION NAVIGATION ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+#profile,
+#skills,
+#about,
+#projects,
+#certificates,
+#experience,
+#contact {
+  scroll-margin-top: 90px;
+}
+
+/* Hormati pengaturan aksesibilitas pengguna */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* ===== HERO CARD: SHARP EMERALD MINIMAL ===== */
+
+.intro-text-card {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: -12px;
+  padding: 26px 30px 28px;
+
+  /* Sudut tegas, bukan bulat */
+  border: 1px solid color-mix(
+    in srgb,
+    var(--accent) 48%,
+    transparent
+  );
+  border-radius: 0;
+
+  /* Transparan agar grid tetap terlihat */
+  background: color-mix(
+    in srgb,
+    var(--paper) 30%,
+    transparent
+  );
+
+  /* Glow emerald yang lembut */
+  box-shadow:
+    inset 3px 0 0 var(--accent),
+    0 0 32px var(--glow);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Aksen kecil di sudut atas */
+.intro-text-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+/* Hello dan Welcome tetap jadi fokus */
+.intro-text-card .intro-title {
+  margin: 0;
+  font-size: clamp(34px, 4.6vw, 62px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+/* Deskripsi tidak mendominasi judul */
+.intro-text-card .intro-description {
+  max-width: 520px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+  .intro-text-card {
+    width: 100%;
+    padding: 22px 20px 24px;
+    margin-top: -6px;
+  }
+
+  .intro-text-card .intro-title {
+    font-size: clamp(30px, 8.5vw, 42px);
+  }
+
+  .intro-text-card .intro-description {
+    margin-top: 14px;
+    padding-top: 14px;
+    font-size: 14px;
+  }
+}
