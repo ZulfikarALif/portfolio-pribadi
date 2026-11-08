@@ -559,9 +559,9 @@ function App() {
         <p className="eyebrow">06 / CONTACT</p>
 
         <h2>
-          Let’s create something
+          Open To New
           <br />
-          <span>Something Great</span>
+          <span>opportunities.</span>
         </h2>
 
         <p>
@@ -587,7 +587,7 @@ function App() {
         </div>
 
         <p className="copyright">
-           Portfolio Alip
+           Zulfikar — Personal Portfolio
         </p>
       </footer>
 
