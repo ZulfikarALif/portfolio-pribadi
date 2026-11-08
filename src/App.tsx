@@ -1,11 +1,14 @@
 import { useState } from "react";
+import Loader from "./Loader";  
 import "./App.css";
 
 function App() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [ready, setReady] = useState(false);
 
-  return (
-    <main className={`app ${theme}`}>
+   return (
+    <main className={`app ${theme}${ready ? " ready" : ""}`}>   {/* ubah */}
+      <Loader onDone={() => setReady(true)} />    
       {/* HERO */}
       <section className="hero hero-intro" id="home">
         <nav className="navbar">
@@ -146,7 +149,7 @@ function App() {
           <p className="eyebrow">02 / SKILLS</p>
 
           <h2>
-            What I <span>Can Do.</span>
+            What I <span>Can Do</span>
           </h2>
 
           <p>
@@ -265,7 +268,7 @@ function App() {
 
         <div className="projects-heading">
           <h2>
-            Proyek Pilihan<span>.</span>
+            Proyek Pilihan
           </h2>
 
           <p>
@@ -385,7 +388,7 @@ function App() {
           <div className="certificates-title-row">
             <div>
               <h2>
-                Certificates<span>.</span>
+                Certificates
               </h2>
 
               <p>
@@ -466,7 +469,7 @@ function App() {
           <p className="eyebrow">05 / EXPERIENCE & ACTIVITIES</p>
 
           <h2>
-            Beyond the <span>Classroom.</span>
+            Beyond the <span>Classroom</span>
           </h2>
 
           <p>

@@ -372,6 +372,8 @@ img { display: block; max-width: 100%; }
   left: 14px;
   display: flex;
   align-items: center;
+  justify-content: center; 
+  gap: 8px;
   padding: 10px 14px;
   border-radius: var(--r-md);
   background: rgba(13, 18, 32, .78);
