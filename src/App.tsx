@@ -257,22 +257,11 @@ function App() {
         </div>
       </section>
 
-      {/* ABOUT ME */}
-      <section className="about" id="about">
-        <p className="eyebrow">03 / ABOUT ME</p>
 
-        <h2>Terus Belajar, Terus Bertumbuh.</h2>
-
-        <p>
-          Saya percaya bahwa teknologi bukan hanya tentang menulis kode,
-          tetapi juga tentang memahami masalah, mengelola informasi,
-          dan menciptakan solusi yang bermanfaat.
-        </p>
-      </section>
 
       {/* PROJECTS */}
       <section className="projects" id="projects">
-        <p className="eyebrow">04 / SELECTED WORK</p>
+        <p className="eyebrow">03 / SELECTED WORK</p>
 
         <div className="projects-heading">
           <h2>
@@ -391,7 +380,7 @@ function App() {
       {/* CERTIFICATES */}
       <section className="certificates" id="certificates">
         <div className="certificates-heading">
-          <p className="eyebrow">05 / CERTIFICATIONS</p>
+          <p className="eyebrow">04 / CERTIFICATIONS</p>
 
           <div className="certificates-title-row">
             <div>
@@ -406,7 +395,7 @@ function App() {
             </div>
 
             <span className="certificates-count">
-              04 <small>CERTIFICATES</small>
+               <small>CERTIFICATES</small>
             </span>
           </div>
         </div>
@@ -564,7 +553,7 @@ function App() {
 
       {/* CONTACT */}
       <footer className="contact" id="contact">
-        <p className="eyebrow">05 / CONTACT</p>
+        <p className="eyebrow">06 / CONTACT</p>
 
         <h2>
           Let’s create something
