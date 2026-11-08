@@ -783,8 +783,7 @@ img { display: block; max-width: 100%; }
 /* ============ LATAR ANIMASI (garis tegas, tanpa gradasi) ============ */
 .app { position: relative; isolation: isolate; }
 
-.app > :not(.bottom-nav) { position: relative; z-index: 1; }
-
+.app > :not(.bottom-nav):not(.loader) { position: relative; z-index: 1; }
 /* Lapisan 1: kisi garis tipis yang bergeser pelan dan tanpa putus */
 .app::before {
   content: "";
@@ -948,4 +947,114 @@ img { display: block; max-width: 100%; }
   }
   .app::before, .app::after { animation: none; }
   .intro-letter, .intro-description, .intro-actions, .intro-bottom-note, .hero-scroll { opacity: 1; transform: none; }
+}
+
+/* ============ LOADING SCREEN ============ */
+/* Tempel di PALING BAWAH App.css */
+
+.app > .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--paper);
+  transition: transform .95s var(--ease) .2s;
+}
+
+/* Kisi garis yang sama dengan latar situs, supaya transisinya menyatu */
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: -64px;
+  background: var(--line);
+  opacity: .85;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M0 .5H64M.5 0V64' stroke='black' stroke-width='1' fill='none'/%3E%3C/svg%3E") 0 0 / 64px 64px repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M0 .5H64M.5 0V64' stroke='black' stroke-width='1' fill='none'/%3E%3C/svg%3E") 0 0 / 64px 64px repeat;
+  animation: gridDrift 50s linear infinite;
+}
+
+.loader-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(360px, 84vw);
+  padding: 32px 28px;
+  background: var(--paper);
+  animation: loaderIn .9s var(--ease) both;
+  transition: opacity .35s ease;
+}
+
+/* Siku bingkai di dua sudut */
+.loader-inner::before,
+.loader-inner::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid var(--accent);
+}
+
+.loader-inner::before { top: 0; left: 0; border-width: 1.5px 0 0 1.5px; }
+.loader-inner::after { right: 0; bottom: 0; border-width: 0 1.5px 1.5px 0; }
+
+.loader-label,
+.loader-name {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+.loader-count {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(64px, 16vw, 88px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.loader-count span { color: var(--accent); font-size: .38em; letter-spacing: 0; }
+
+.loader-bar {
+  height: 1px;
+  background: var(--line);
+}
+
+.loader-bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+}
+
+/* Keluar: isi memudar, lalu layar terangkat ke atas */
+.loader-exit { transform: translateY(-100%); }
+.loader-exit .loader-inner { opacity: 0; }
+
+@keyframes loaderIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Animasi hero baru mulai setelah loading selesai */
+.app:not(.ready) :is(
+  .intro-letter,
+  .intro-description,
+  .intro-actions,
+  .intro-bottom-note,
+  .hero-scroll
+) {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader::before { animation: none; }
 }
