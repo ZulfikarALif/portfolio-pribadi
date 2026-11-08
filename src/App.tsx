@@ -135,7 +135,7 @@ function App() {
 
           <div className="profile-image-label">
             <span className="status-dot"></span>
-            INFORMATICS ENGINEERING GRADUATE
+            INFORMATICS ENGINEERING 
           </div>
         </div>
       </section>
