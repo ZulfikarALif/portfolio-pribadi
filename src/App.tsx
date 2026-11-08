@@ -104,7 +104,7 @@ function App() {
           </h2>
 
           <p className="profile-intro">
-            Informatics Engineering Graduate yang tertarik pada
+            Informatics Engineering yang tertarik pada
             pengembangan web, machine learning, dan pengolahan data.
           </p>
 
@@ -587,7 +587,7 @@ function App() {
         </div>
 
         <p className="copyright">
-          © 2026 Zulfikar — Personal Portfolio
+           Portfolio Alip
         </p>
       </footer>
 
